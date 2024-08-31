@@ -1,0 +1,17 @@
+# Install pytube if you haven't already
+!pip install pytube
+
+from pytube import Playlist
+
+# Replace with your playlist URL
+playlist_url = "https://www.youtube.com/playlist?list=PLE6nCASEBsgD6HSVUjaKKa0a0h0XK3aGR"
+
+# Fetch the playlist
+playlist = Playlist(playlist_url)
+
+# Create a list of song titles
+song_titles = [video.title for video in playlist.videos]
+
+# Display the song titles
+for idx, title in enumerate(song_titles, start=1):
+    print(f"{idx}. {title}")
